@@ -27,12 +27,12 @@ jobs:
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: Build
-        run: ./gradlew build
+        run: ./gradlew clean build
       - name: upload
         uses: actions/upload-artifact@v3
         with:
-         name: CustomNameplates
-         path: plugin/
+         name: QuestEngine
+         path: build/libs/
       - name: automatic releases
         uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
